@@ -7,11 +7,19 @@ import javax.persistence.*;
 public class Setor {
 	
 	@Id
-    @SequenceGenerator(name = "setor_seq_gen", sequenceName = "setor_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="setor_seq_gen")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 	
 	private String nome;
+	
+	public Setor() {
+		
+	}
+
+	public Setor(String nome) {
+		super();
+		this.nome = nome;
+	}
 
 	public Long getId() {
 		return id;

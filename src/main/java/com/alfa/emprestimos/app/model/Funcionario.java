@@ -1,6 +1,9 @@
 package com.alfa.emprestimos.app.model;
 
 import javax.persistence.*;
+
+import org.springframework.web.bind.annotation.ModelAttribute;
+
 import java.util.Date;
 
 @Entity
@@ -8,8 +11,7 @@ import java.util.Date;
 public class Funcionario {
 
 	@Id
-    @SequenceGenerator(name = "funcionario_seq_gen", sequenceName = "funcionario_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="funcionario_seq_gen")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 	
 	private String nome;
@@ -22,10 +24,24 @@ public class Funcionario {
 	
 	@ManyToOne
 	private Cargo cargo;
-	
+
 	@ManyToOne
 	private Setor setor;
+	
+	public Funcionario() {
+		
+	}
 
+	public Funcionario(String nome, String cpf, Date dataAdmissao, String observacao, @ModelAttribute Cargo cargo, @ModelAttribute Setor setor) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.dataAdmissao = dataAdmissao;
+		this.observacao = observacao;
+		this.cargo = cargo;
+		this.setor = setor;
+	}	
+	
 	public Long getId() {
 		return id;
 	}
@@ -81,6 +97,4 @@ public class Funcionario {
 	public void setSetor(Setor setor) {
 		this.setor = setor;
 	}
-	
-	
 }

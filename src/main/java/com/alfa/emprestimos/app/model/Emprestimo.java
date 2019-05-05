@@ -37,16 +37,18 @@ public class Emprestimo {
     public Emprestimo() {
 
     }
+    
+    public Emprestimo(Date dataOperacao, Funcionario funcionario, BigDecimal valor, Integer quantidadeParcelas,
+			Set<ParcelaEmprestimo> parcelas) {
+		super();
+		this.dataOperacao = dataOperacao;
+		this.funcionario = funcionario;
+		this.valor = valor;
+		this.quantidadeParcelas = quantidadeParcelas;
+		this.parcelas = parcelas;
+	}
 
-    public Emprestimo(BigDecimal valor) {
-        this.valor = valor;
-    }
-    
-    public Emprestimo(Long valor) {
-        this.valor = new BigDecimal(valor);
-    }
-    
-    public Long getId() {
+	public Long getId() {
         return id;
     }
 
