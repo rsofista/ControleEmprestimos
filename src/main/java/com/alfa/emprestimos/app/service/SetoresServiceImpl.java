@@ -5,6 +5,7 @@ import com.alfa.emprestimos.app.repository.SetorRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SetoresServiceImpl {
@@ -14,5 +15,9 @@ public class SetoresServiceImpl {
 
     public List<Setor> getAll(){
         return setorRepository.findAll();
+    }
+    
+    public Optional<Setor> findById(Long id) {
+    	return setorRepository.findById(id);
     }
 }

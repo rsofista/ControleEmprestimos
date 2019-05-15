@@ -5,6 +5,7 @@ import com.alfa.emprestimos.app.repository.CargoRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CargosServiceImpl {
@@ -14,5 +15,9 @@ public class CargosServiceImpl {
 
     public List<Cargo> getAll(){
         return cargoRepository.findAll();
+    }
+    
+    public Optional<Cargo> findById(Long id) {
+    	return cargoRepository.findById(id);
     }
 }

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 @Repository
 public interface EmprestimoRepositoryImpl extends CrudRepository<Emprestimo, Long> {
 

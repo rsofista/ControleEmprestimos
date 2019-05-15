@@ -5,6 +5,7 @@ import javax.persistence.*;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.Date;
+import java.util.Optional;
 
 @Entity
 @Table(name = "funcionario")
@@ -86,15 +87,15 @@ public class Funcionario {
 		return cargo;
 	}
 
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
-	}
-
 	public Setor getSetor() {
 		return setor;
 	}
 
 	public void setSetor(Setor setor) {
 		this.setor = setor;
+	}
+
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
 	}
 }

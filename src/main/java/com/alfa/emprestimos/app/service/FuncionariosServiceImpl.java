@@ -15,4 +15,14 @@ public class FuncionariosServiceImpl {
     public List<Funcionario> getAll(){
         return funcionarioRepository.findAll();
     }
+    
+    public Funcionario inserir(Funcionario funcionario) {
+    	funcionario.setId(null);
+
+    	return funcionarioRepository.save(funcionario);
+    }
+    
+    public Funcionario editar(Funcionario funcionario) {
+    	return funcionarioRepository.save(funcionario);
+    }
 }
